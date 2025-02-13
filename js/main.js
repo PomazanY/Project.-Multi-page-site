@@ -69,26 +69,30 @@ document.addEventListener('DOMContentLoaded', () => {
             eventElement.classList.add('event-item');
 
             eventElement.innerHTML = `
+            
             <div class="image-events">
                 <img src="${event.image}" alt="${event.title}" width='272px' height='153px'>
             </div>
+            
             <div class="event-content">
                 <div class="event-details">
                     <h2>${event.date.toLocaleString()}</h2>
                     <p class="title">${event.title}</p>
                     <p class="category"> ${event.category}</p>
                 </div>
-            </div>      
+                
+            </div> 
+
   `;
             container.appendChild(eventElement);
         });
     }
 
     function filtersFunction() {
-        const typeFilter = document.querySelector('.event-type').value;
-        const categoryFilter = document.querySelector('.event-category').value;
-        const distanceFilter = document.querySelector('.event-distance').value;
-        const dateFilter = document.querySelector('.event-date').value;
+        const typeFilter = document.getElementById('eventType').value;
+        const categoryFilter = document.getElementById('eventDistance').value;
+        const distanceFilter = document.getElementById('eventCategory').value;
+        const dateFilter = document.getElementById('eventDate').value;
 
         let filteredEvents = eventsStore.filter(event => {
             return (typeFilter === 'all' || event.type === typeFilter) &&
@@ -100,10 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
         renderFunction(filteredEvents);
     }
 
-    document.querySelector('.event-type').addEventListener('input', filtersFunction);
-    document.querySelector('.event-category').addEventListener('input', filtersFunction);
-    document.querySelector('.event-distance').addEventListener('input', filtersFunction);
-    document.querySelector('.event-date').addEventListener('input', filtersFunction);
+    document.getElementById('eventType').addEventListener('input', filtersFunction);
+    document.getElementById('eventDistance').addEventListener('input', filtersFunction);
+    document.getElementById('eventCategory').addEventListener('input', filtersFunction);
+    document.getElementById('eventDate').addEventListener('input', filtersFunction);
 
     renderFunction();
 });

@@ -31,7 +31,7 @@
         gap: 0.94em
 
 
-.event h2
+    h2
     @include mixins.line-height($line-height:129%, $font-weight: 600, $font-size:1.75em)
 
     color: variables.$color
@@ -111,6 +111,18 @@
     @media (min-width:768px) and (max-width: 1024px)
         flex: 1 1 calc(25% - 24px)
 
+/* Заголовок события */
+.event-card  a
+    @include mixins.line-height($line-height:120%, $font-weight: 600, $font-size:1.25em)
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 1em
+
+    @media (min-width:393px) and (max-width: 768px)
+        font-size: 0.94em
+
+
 /* Изображение карточки */
 .event-card img
     width: 100%
@@ -120,19 +132,10 @@
     border-radius: 0.5em
     transition: transform 0.3s ease
 
-.event-card img:hover
+    :hover
     transform: scale(1.05)
 
-/* Заголовок события */
-.event-card a
-    @include mixins.line-height($line-height:120%, $font-weight: 600, $font-size:1.25em)
-    color: variables.$color
 
-    @media (min-width:768px) and (max-width: 1024px)
-        font-size: 1em
-
-    @media (min-width:393px) and (max-width: 768px)
-        font-size: 0.94em
 
 /* Категория события */
 .event-card .event-category

@@ -1,20 +1,93 @@
 @charset "UTF-8";
-.friendships-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  margin: 0 10em 7.8em;
+.main {
+  height: 100%;
+}
+
+.titleNewYourk h1 {
+  line-height: 129%;
+  font-weight: 600;
+  font-size: 1.75em;
+  color: #212121;
+  margin: 100px 0px 16px 158px;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .friendships-section {
-    margin: 0em 3.12em 3.12em;
+  .titleNewYourk h1 {
+    font-size: 1.5em;
+    margin-left: 1em;
     gap: 1.25em;
   }
 }
 @media (min-width: 393px) and (max-width: 768px) {
-  .friendships-section {
-    margin: 0 1.25em 3.12em 1.25em;
-    gap: 1.25em;
+  .titleNewYourk h1 {
+    font-size: 1.375em;
+    margin-left: 1em;
+    gap: 1em;
+  }
+}
+
+.titleNewYourk h2 {
+  line-height: 140%;
+  font-weight: 500;
+  font-size: 1.25em;
+  color: #00798A;
+  margin: 16px 0px 12px 158px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .titleNewYourk h2 {
+    font-size: 1.125em;
+    margin-left: 1.5em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .titleNewYourk h2 {
+    font-size: 1em;
+    margin-left: 1.2em;
+  }
+}
+
+#filters {
+  display: flex;
+  gap: 1.125em;
+  margin: 1em 1em 3.5em 9.87em;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  #filters {
+    gap: 0.75em;
+    margin-left: 1.5em;
+    width: 50%;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  #filters {
+    gap: 0.62em;
+    margin-left: 1.2em;
+    width: 100%;
+  }
+}
+
+.filter {
+  border-radius: 2.5em;
+  border: none;
+  padding: 1em;
+  line-height: 100%;
+  font-weight: 500;
+  font-size: 0.875em;
+  text-align: center;
+  color: #212121;
+  background: #f6f7f8;
+  /*Блок карта*/
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .filter {
+    padding: 0.625em;
+    font-size: 0.875em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .filter {
+    padding: 0.5em;
+    font-size: 0.75em;
   }
 }
 
@@ -25,6 +98,18 @@
   border-radius: 0.75em;
   padding: 1em;
   z-index: 10;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .events-map-container {
+    top: 180px;
+    right: 75px;
+    padding: 0.8em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .events-map-container {
+    display: none;
+  }
 }
 
 .events-map-container h3 {
@@ -47,12 +132,36 @@
   gap: 0.94em;
   margin: 0 47em 3em 10em;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .event-item {
+    width: 50%;
+    gap: 10px;
+    margin-left: 1.5em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .event-item {
+    width: 90%;
+    gap: 8px;
+    margin-left: 1.2em;
+  }
+}
 
 .event-item h2 {
   line-height: 120%;
   font-weight: 600;
   font-size: 1.25em;
   color: #212121;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .event-item h2 {
+    font-size: 18px;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .event-item h2 {
+    font-size: 16px;
+  }
 }
 
 .event-details h2 {
@@ -63,6 +172,16 @@
   text-transform: uppercase;
   color: #7c6f50;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .event-details h2 {
+    font-size: 0.81em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .event-details h2 {
+    font-size: 0.75em;
+  }
+}
 
 .event-details .title {
   line-height: 150%;
@@ -70,12 +189,32 @@
   font-size: 1em;
   color: #212121;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .event-details .title {
+    font-size: 0.875em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .event-details .title {
+    font-size: 0.81em;
+  }
+}
 
 .event-details .category {
   line-height: 143%;
   font-weight: 500;
   font-size: 0.875em;
   color: #707070;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .event-details .category {
+    font-size: 0.81em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .event-details .category {
+    font-size: 1.33em;
+  }
 }
 
 /* Карта */
@@ -106,9 +245,28 @@
   padding: 0.5em 1.5em;
   transition: 0.3;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  #open-map-btn {
+    font-size: 0.75em;
+    padding: 0.375em 1.25em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  #open-map-btn {
+    font-size: 0.625em;
+    padding: 0.31em 1em;
+  }
+}
 
 #open-map-btn:hover {
-  border: 2px solid #F65858;
+  border: 0.125em solid #F65858;
+}
+
+@media (min-width: 393px) and (max-width: 768px) {
+  .image-events img {
+    width: 7.5em;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=meetup.css.map */

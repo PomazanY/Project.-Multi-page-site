@@ -1,40 +1,31 @@
-<nav>
-    <ul>
-        <li><a href="./index.html" class="nav-link" data-page="index"></a></li>
-        <li><a href="../pages/meetup.html" class="nav-link" data-page="about"></a></li>
 
-    </ul>
-</nav>
 
 <nav class="navbar">
-
-
-    <form action="/search" method="GET" class="search-form">
+    <!-- <div class="content"></div> -->
+    <div class="nav-logo">
         <a href="../pages/index.html"><img src="../assets/icons/Vector.svg" alt="logo"></a>
+    </div>
 
-        <div class="all-search-container">
-            <div class="search-container">
-                <img src="../assets/icons/search.svg" class="search-icon" alt="Search">
-                <input class="input" type="search" name="q" placeholder="Search events">
-                <input class="location" type="text" name="location" placeholder="Mountain View, CA">
-            </div>
+    <div class="all-search-container">
+        <img src="../assets/icons/search.svg" class="search-icon" alt="Search">
+        <input class="input" type="search" name="q" placeholder="Search events">
+        <input class="location" type="text" name="location" placeholder="Mountain View, CA">
 
-            <button class="button-search" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-                </svg>
-            </button>
-        </div>
 
-    </form>
+        <button class="button-search" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+        </button>
+    </div>
 
-    <ul class="menu">
+
+    <div class="menu">
         <li class="english-icon">
             <img src="../assets/icons/world.svg" class="world" alt="world">
             <a href="#">English</a>
         </li>
         <li><a href="#">Log in</a></li>
         <li class="li-button"><a href="#">Sign up</a></li>
-    </ul>
+    </div>
 </nav>
-

@@ -13,16 +13,16 @@
         margin: 0 1.25em 3.12em 1.25em
         gap: 1.25em
 
-.categories h2
+    h2
     @include mixins.line-height($line-height:129%,$font-weight: 600, $font-size:1.75em)
 
     color: variables.$color
 
     @media (min-width:768px) and (max-width: 1024px)
-        font-size: 1.375em
+         font-size: 1.375em
 
     @media (min-width:393px) and (max-width: 768px)
-        @include mixins.line-height($line-height:180%,$font-weight: 600, $font-size:1.25em)
+    @include mixins.line-height($line-height:180%,$font-weight: 600, $font-size:1.25em)
 
 // Контейнер, содержащий карточки категорий
 .categories-container
@@ -58,19 +58,19 @@
         max-width: 18.75em
 
 // Текст внутри карточки
-.category-card p
+    p
     @include mixins.line-height($line-height:150%,$font-weight: 500, $font-size:1em)
 
     text-align: center
     color: variables.$color
 
     @media (min-width:768px) and (max-width: 1024px)
-        font-size: 0.875em
+            font-size: 0.875em
 
     @media (min-width:393px) and (max-width: 768px)
-        @include mixins.line-height($line-height:150%,$font-weight: 500, $font-size:1em)
+    @include mixins.line-height($line-height:150%,$font-weight: 500, $font-size:1em)
 
       
 
-.category-card:hover
+    :hover
     transform: translateY(-15px)
