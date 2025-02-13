@@ -2,108 +2,119 @@
 @use '../variables'
 
 .navbar
-    @include mixins.navigation()
+    display: flex
+    gap: 1em
     justify-content: space-between
-    padding: 0em 0.9em 0em 0.9em
-    background: variables.$bg-color-white
-    position: fixed
-    top: 0
-    left: 0
-    z-index: 1000
+    padding: 10px 20px
     width: 100%
+    flex-wrap: wrap
 
-    @media (max-width: 1024px)
-        flex-direction: column
-        align-items: flex-start 
-       
+    @media (min-width:768px) and (max-width: 1024px)
+        padding: 0.94em 2.5em
 
-/* Логотип */
-.logo
-    margin: 1.2em 1.5em
+    @media (min-width: 500px) and (max-width: 768px)
+        gap: 0.62em
+        padding: 0.62em
 
-/* Форма поиска */
-.search-form
-    @include mixins.navigation
-    gap: 2.5em
-    padding: 0.3em
+    @media (min-width: 393px) and (max-width: 500px)
+        gap: 0.62em
+        
 
-/* Контейнер поиска */
-.search-container
-    @include mixins.flex-container()
-    @include mixins.border-radius()
-    border: variables.$border
-
-    @media (max-width: 1024px)
-       
+.nav-logo
+    @media (min-width: 500px) and (max-width: 768px)
+        order: 0
+    @media (min-width: 393px) and (max-width: 500px)
+        order: 0
 
 .all-search-container
-    @include mixins.flex-container()
-    padding: 0.5em 0.9em
+    @include mixins.navigation()
+    border: variables.$border
+    border-radius: 0.5em
+    padding-left: 0.75em
+    gap: 2.5em
 
-/* Иконка поиска внутри поля */
-.search-icon
-    position: absolute
-    left: 0.8em
+    @media (min-width: 500px) and (max-width: 768px)
+        order: 2
+    @media (min-width: 393px) and (max-width: 500px)
+        order: 2
+        gap: 0em
 
-/* Поле "Search events" */
-input[type="search"]
-    @include mixins.input()
-    border-radius: 0.5em 0 0 0.5em
-    flex: 1
-    /*Позволяет занять всю доступную ширину*/
+.input,
+.town
+    border: none
+    outline: none
+    padding: 0.5em
+    font-size: 0.875em
 
-/* Поле "Location" */
-input[name="location"]
-    @include mixins.input()
-    border-left: variables.$border
-    /* Добавляем разделительную линию */
+.input
+    border-right: 1px solid variables.$bg-c5c4c4
 
-/* Кнопка поиска */
+    @media (min-width:768px) and (max-width: 1024px)
+        width: 250px
+
+    @media (min-width: 500px) and (max-width: 768px)
+        width: 100%
+
+    @media (min-width: 393px) and (max-width: 500px)
+        width: 100%
+
+.town
+    width: 9.4em
+    text-align: center
+
+    @media (min-width:768px) and (max-width: 1024px)
+        width: 11.25em
+
+    @media (min-width:393px) and (max-width: 500px)
+        display: none
+
 .button-search
-    @include mixins.navigation
     background: variables.$bg-F65858
     box-shadow: variables.$box-shadow
     border: none
-    width: 3em
-    height: 3em
+    padding: 11px 12px
+    border-top-right-radius: 0.5em
+    border-bottom-right-radius: 0.5em
+
     cursor: pointer
+    display: flex
+    align-items: center
     justify-content: center
-    border-radius: 0 0.5em 0.5em 0
     transition: 0.5s
 
-/* Ховер-эффект */
+    & svg
+        width: 1.12em
+        height: 1.1em
+        fill: variables.$bg-color-white
+
 .button-search:hover
     background: variables.$bg-00798A
     box-shadow: variables.$box-shadow
 
-/* SVG внутри кнопки */
-.button-search svg
-    width: 1.12em
-    height: 1.1em
-    fill: variables.$bg-color-white
-
-/* Меню*/
 .menu
-    display: flex
+    @include mixins.navigation()
     gap: 1.4em
-    padding: 1.6em
+    list-style: none
 
-    @media (max-width: 1024px)
-    
-    
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 1.25em
 
-.menu a
-    font-weight: 500
-    font-size: 0.875em
-    line-height: 143%
-    text-align: center
-    color: variables.$color
+    @media (min-width: 500px) and (max-width: 768px)
+        order: 1
+        gap: 0.62em
 
-.english-icon
-    display: flex
-    gap: 0.1em
+    @media (min-width: 393px) and (max-width: 500px) 
+        order: 1
+        gap: 0.62em
 
-/*Стилизация ссылки внутри кнопки */
+
+    & li
+        font-size: 14px
+
+    & a
+        text-decoration: none
+        color: variables.$color
+
 .li-button a
     color: variables.$bg-color-white
     background-color: variables.$bg-00798A
@@ -114,8 +125,22 @@ input[name="location"]
     padding: 0.5em 1em
     border-radius: 0.5em
     transition: 0.5s
+    white-space: nowrap
 
-/* Ховер-эффект */
+    @media (min-width: 768px) and (max-width: 1024px)
+        padding: 0.62em 1.25em
+
+    @media (min-width: 500px) and (max-width: 768px)
+        padding: 0.375em 0.75em
+
+    @media (min-width: 393px) and (max-width: 500px) 
+        padding: 0.375em 0.75em
+
 .li-button a:hover
     background: variables.$bg-F65858
     box-shadow: variables.$box-shadow
+
+.english-icon
+    display: flex
+    justify-content: center
+    gap: 0.62em

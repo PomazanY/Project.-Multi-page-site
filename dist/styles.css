@@ -12,129 +12,157 @@
 
 .navbar {
   display: flex;
-  align-items: center;
+  gap: 1em;
   justify-content: space-between;
-  padding: 0em 0.9em 0em 0.9em;
-  background: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  padding: 10px 20px;
   width: 100%;
+  flex-wrap: wrap;
 }
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 0.94em 2.5em;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .navbar {
+    gap: 0.62em;
+    padding: 0.62em;
+  }
+}
+@media (min-width: 393px) and (max-width: 500px) {
+  .navbar {
+    gap: 0.62em;
   }
 }
 
-/* Логотип */
-.logo {
-  margin: 1.2em 1.5em;
+@media (min-width: 500px) and (max-width: 768px) {
+  .nav-logo {
+    order: 0;
+  }
+}
+@media (min-width: 393px) and (max-width: 500px) {
+  .nav-logo {
+    order: 0;
+  }
 }
 
-/* Форма поиска */
-.search-form {
-  display: flex;
-  align-items: center;
-  gap: 2.5em;
-  padding: 0.3em;
-}
-
-/* Контейнер поиска */
-.search-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  border-top-left-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-  border: 0.0625em solid rgba(0, 0, 0, 0.1882352941);
-}
 .all-search-container {
   display: flex;
   align-items: center;
-  position: relative;
-  padding: 0.5em 0.9em;
+  border: 0.0625em solid rgba(0, 0, 0, 0.1882352941);
+  border-radius: 0.5em;
+  padding-left: 0.75em;
+  gap: 2.5em;
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .all-search-container {
+    order: 2;
+  }
+}
+@media (min-width: 393px) and (max-width: 500px) {
+  .all-search-container {
+    order: 2;
+    gap: 0em;
+  }
 }
 
-/* Иконка поиска внутри поля */
-.search-icon {
-  position: absolute;
-  left: 0.8em;
-}
-
-/* Поле "Search events" */
-input[type=search] {
-  padding: 13px 37px;
+.input,
+.town {
   border: none;
   outline: none;
-  font-weight: 400;
-  font-size: 1em;
-  border-radius: 0.5em 0 0 0.5em;
-  flex: 1;
-  /*Позволяет занять всю доступную ширину*/
+  padding: 0.5em;
+  font-size: 0.875em;
 }
 
-/* Поле "Location" */
-input[name=location] {
-  padding: 13px 37px;
-  border: none;
-  outline: none;
-  font-weight: 400;
-  font-size: 1em;
-  border-left: 0.0625em solid rgba(0, 0, 0, 0.1882352941);
-  /* Добавляем разделительную линию */
+.input {
+  border-right: 1px solid #c5c4c4;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .input {
+    width: 250px;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .input {
+    width: 100%;
+  }
+}
+@media (min-width: 393px) and (max-width: 500px) {
+  .input {
+    width: 100%;
+  }
 }
 
-/* Кнопка поиска */
+.town {
+  width: 9.4em;
+  text-align: center;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .town {
+    width: 11.25em;
+  }
+}
+@media (min-width: 393px) and (max-width: 500px) {
+  .town {
+    display: none;
+  }
+}
+
 .button-search {
-  display: flex;
-  align-items: center;
   background: #F65858;
   box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.3137254902);
   border: none;
-  width: 3em;
-  height: 3em;
+  padding: 11px 12px;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
   cursor: pointer;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  border-radius: 0 0.5em 0.5em 0;
   transition: 0.5s;
 }
-
-/* Ховер-эффект */
-.button-search:hover {
-  background: #00798A;
-  box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.3137254902);
-}
-
-/* SVG внутри кнопки */
 .button-search svg {
   width: 1.12em;
   height: 1.1em;
   fill: white;
 }
 
-/* Меню*/
+.button-search:hover {
+  background: #00798A;
+  box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.3137254902);
+}
+
 .menu {
   display: flex;
+  align-items: center;
   gap: 1.4em;
-  padding: 1.6em;
+  list-style: none;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menu {
+    gap: 1.25em;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .menu {
+    order: 1;
+    gap: 0.62em;
+  }
+}
+@media (min-width: 393px) and (max-width: 500px) {
+  .menu {
+    order: 1;
+    gap: 0.62em;
+  }
+}
+.menu li {
+  font-size: 14px;
 }
 .menu a {
-  font-weight: 500;
-  font-size: 0.875em;
-  line-height: 143%;
-  text-align: center;
+  text-decoration: none;
   color: #212121;
 }
 
-.english-icon {
-  display: flex;
-  gap: 0.1em;
-}
-
-/*Стилизация ссылки внутри кнопки */
 .li-button a {
   color: white;
   background-color: #00798A;
@@ -145,12 +173,33 @@ input[name=location] {
   padding: 0.5em 1em;
   border-radius: 0.5em;
   transition: 0.5s;
+  white-space: nowrap;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .li-button a {
+    padding: 0.62em 1.25em;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .li-button a {
+    padding: 0.375em 0.75em;
+  }
+}
+@media (min-width: 393px) and (max-width: 500px) {
+  .li-button a {
+    padding: 0.375em 0.75em;
+  }
 }
 
-/* Ховер-эффект */
 .li-button a:hover {
   background: #F65858;
   box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.3137254902);
+}
+
+.english-icon {
+  display: flex;
+  justify-content: center;
+  gap: 0.62em;
 }
 
 .main-container {
@@ -158,14 +207,15 @@ input[name=location] {
   align-items: center;
   justify-content: center;
   gap: 3.4em;
-  padding-top: 10em;
+  padding-top: 2em;
+  padding-bottom: 2em;
   margin: 0 10em 7.8em;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .main-container {
     gap: 1.25em;
     height: auto;
-    margin: 3.1em 3.1em;
+    margin: 2.1em 3.1em;
   }
 }
 @media (min-width: 393px) and (max-width: 767px) {
@@ -256,7 +306,7 @@ input[name=location] {
 }
 @media (min-width: 393px) and (max-width: 768px) {
   .main-content a {
-    display: none;
+    font-size: 0.875em;
   }
 }
 
@@ -312,10 +362,18 @@ input[name=location] {
 }
 
 /* Блок с заголовком и местоположением */
-.events-header .event {
+.event {
   display: flex;
   align-items: center;
   gap: 1.2em;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .event {
+    gap: 0.94em;
+  }
+}
+
+.event h2 {
   line-height: 129%;
   font-weight: 600;
   font-size: 1.75em;
@@ -324,17 +382,12 @@ input[name=location] {
   overflow-wrap: break-word;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .events-header .event {
-    gap: 0.94em;
-  }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .events-header .event {
+  .event h2 {
     font-size: 1.375em;
   }
 }
 @media (min-width: 393px) and (max-width: 768px) {
-  .events-header .event {
+  .event h2 {
     line-height: 123%;
     font-weight: 600;
     font-size: 1.25em;
@@ -363,9 +416,7 @@ input[name=location] {
 }
 @media (min-width: 393px) and (max-width: 768px) {
   .event a {
-    line-height: 120%;
-    font-weight: 600;
-    font-size: 0.8125;
+    font-size: 0.875em;
   }
 }
 
@@ -508,17 +559,19 @@ input[name=location] {
 }
 
 /* Размер иконок */
-.event-card .img-going img,
-.event-card .img-ticket img {
+.event-card .img-going img {
   width: 1.25em;
   height: 1.25em;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .event-card .img-going img,
-  .event-card .img-ticket img {
+  .event-card .img-going img {
     width: 1em;
     height: 1em;
   }
+}
+
+.event-card .img-ticket img {
+  overflow: visible;
 }
 
 /* Обеспечивает перенос длинных слов */
@@ -609,9 +662,8 @@ input[name=location] {
 }
 @media (min-width: 393px) and (max-width: 768px) {
   .join-meetup__content p {
-    line-height: 200%;
-    font-weight: 400;
-    font-size: 0.75em;
+    font-size: 0.875em;
+    width: 100%;
   }
 }
 
@@ -647,13 +699,6 @@ input[name=location] {
 }
 
 @media (min-width: 393px) and (max-width: 768px) {
-  .join-meetup__content p {
-    width: 14.88em;
-    height: 8.5em;
-  }
-}
-
-@media (min-width: 393px) and (max-width: 768px) {
   .join-meetup__image {
     order: -1;
   }
@@ -670,13 +715,6 @@ input[name=location] {
   flex-direction: column;
   gap: 1.5em;
   margin: 0 10em 7.8em;
-  line-height: 129%;
-  font-weight: 600;
-  font-size: 1.75em;
-  color: #212121;
-  line-height: 180%;
-  font-weight: 600;
-  font-size: 1.25em;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .categories {
@@ -690,8 +728,18 @@ input[name=location] {
     gap: 1.25em;
   }
 }
+
+.categories h2 {
+  line-height: 129%;
+  font-weight: 600;
+  font-size: 1.75em;
+  color: #212121;
+  line-height: 180%;
+  font-weight: 600;
+  font-size: 1.25em;
+}
 @media (min-width: 768px) and (max-width: 1024px) {
-  .categories {
+  .categories h2 {
     font-size: 1.375em;
   }
 }
@@ -734,6 +782,25 @@ input[name=location] {
     flex: 1 1 calc(50% - 16px);
     max-width: 18.75em;
   }
+}
+
+.category-card p {
+  line-height: 150%;
+  font-weight: 500;
+  font-size: 1em;
+  text-align: center;
+  color: #212121;
+  line-height: 150%;
+  font-weight: 500;
+  font-size: 1em;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .category-card p {
+    font-size: 0.875em;
+  }
+}
+.category-card:hover {
+  transform: translateY(-15px);
 }
 
 .popular-cities {
@@ -922,7 +989,6 @@ input[name=location] {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .meetup-card {
-    flex: 1 1 calc(50% - 24px);
     padding: 1.5em 1.25em;
     gap: 1.25em;
   }
@@ -1194,7 +1260,7 @@ input[name=location] {
   font-weight: 600;
   font-size: 1.75em;
   color: #212121;
-  margin: 100px 0px 16px 158px;
+  margin: 80px 0px 16px 158px;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .titleNewYourk h1 {
@@ -1216,7 +1282,7 @@ input[name=location] {
   font-weight: 500;
   font-size: 1.25em;
   color: #00798A;
-  margin: 16px 0px 12px 158px;
+  margin: 16px 0px 16px 158px;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .titleNewYourk h2 {
@@ -1227,7 +1293,7 @@ input[name=location] {
 @media (min-width: 393px) and (max-width: 768px) {
   .titleNewYourk h2 {
     font-size: 1em;
-    margin-left: 1.2em;
+    margin-left: 1.3em;
   }
 }
 
@@ -1316,7 +1382,10 @@ input[name=location] {
 .event-item {
   display: flex;
   gap: 0.94em;
-  margin: 0 47em 3em 10em;
+  margin: 0 47em 2em 10em;
+  padding-bottom: 20px;
+  position: relative;
+  border-bottom: 1px solid #D9D9D9;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .event-item {
@@ -1331,6 +1400,15 @@ input[name=location] {
     gap: 8px;
     margin-left: 1.2em;
   }
+}
+
+.event-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
 }
 
 .event-item h2 {

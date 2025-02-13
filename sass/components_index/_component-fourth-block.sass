@@ -4,6 +4,7 @@
 // Контейнер секции "Join Meetup"
 .join-meetup
     @include mixins.navigation()
+    
     gap: 7.2em
 
     background: variables.$bg-97cad11f
@@ -50,7 +51,8 @@
         font-size: 0.875em
 
     @media (min-width:393px) and (max-width: 768px)
-        @include mixins.line-height($line-height:200%, $font-weight: 400, $font-size:0.75em)
+        font-size: 0.875em
+        width: 100%
 
 // Кнопка "Sign Up"
 .join-meetup__content a
@@ -75,9 +77,6 @@
     @media (min-width:393px) and (max-width: 768px)
         align-items: center
 
-.join-meetup__content p
-    @media (min-width:393px) and (max-width: 768px)
-        @include mixins.width-height($width:14.88em, $height: 8.5em)
 
 
 .join-meetup__image

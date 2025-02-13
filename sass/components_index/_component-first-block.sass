@@ -5,13 +5,14 @@
     @include mixins.navigationFlex()
     gap: 3.4em
     // height: 100vh
-    padding-top: 10em
+    padding-top: 2em
+    padding-bottom: 2em
     margin: variables.$margin
 
     @media (min-width:768px) and (max-width: 1024px)
         gap: 1.25em
         height: auto
-        margin: 3.1em 3.1em
+        margin: 2.1em 3.1em
 
     @media (min-width:393px) and (max-width: 767px)
         flex-direction: column
@@ -69,9 +70,10 @@
     @media (min-width:768px) and (max-width: 1024px)
         @include mixins.width-height($width:7.5em, $height: 2.5em)
         font-size: 0.875em
+        
 
     @media (min-width:393px) and (max-width: 768px)
-        display: none
+        font-size: 0.875em
 
 .main-content a:hover
     background: variables.$bg-F65858
