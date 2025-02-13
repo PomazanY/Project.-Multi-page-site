@@ -1943,6 +1943,7 @@ main {
         gap: 10px;
         margin-left: 1.2em;
         width: 100%;
+        overflow-y: scroll
 
     }
 

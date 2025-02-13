@@ -7,14 +7,16 @@
 .titleNewYourk h1
     @include mixins.line-height($line-height:129%, $font-weight: 600, $font-size:1.75em)
     color: variables.$color
-    margin: 80px 0px 16px 158px
+    margin: 120px 0px 16px 158px
 
     @media (min-width:768px) and (max-width: 1024px)
+        margin-top: 7em
         font-size: 1.5em
         margin-left: 1em
         gap: 1.25em
 
     @media (min-width:393px) and (max-width: 768px)
+        margin-top: 7em
         font-size: 1.375em
         margin-left: 1em
         gap: 1em
@@ -36,7 +38,7 @@
 #filters
     display: flex
     gap: 1.125em
-    margin: 1em 1em 3.5em 9.87em
+    margin: 1em 1em 2em 9.87em
 
     @media (min-width:768px) and (max-width: 1024px)
         gap: 0.75em
@@ -48,6 +50,10 @@
         gap: 0.62em
         margin-left: 1.2em
         width: 100%
+
+.div-overflow
+    @media (min-width:393px) and (max-width: 768px)
+        overflow-x: scroll
 
 .filter
     border-radius: 2.5em
@@ -72,13 +78,18 @@
     /*Блок карта*/
 
 .events-map-container
-    position: absolute
-    top: 10.12em
-    right: 8.3em
+    // position: absolute
+    // top: 10.12em
+    // right: 8.3em
 
     border-radius: 0.75em
     padding: 1em
     z-index: 10
+
+    position: fixed
+    top: 2.12em
+    right: 8.3em
+    transition: top 0.3s ease-in-out
 
     @media (min-width:768px) and (max-width: 1024px)
         top: 180px
@@ -102,7 +113,7 @@
 .event-item
     display: flex
     gap: 0.94em
-    margin: 0 47em 2em 10em
+    margin: 1em 47em 2em 10em
     padding-bottom: 20px
     position: relative
     border-bottom: 1px solid #D9D9D9
@@ -170,7 +181,7 @@
         font-size: 0.81em
 
     @media (min-width:393px) and (max-width: 768px)
-        font-size: 1.33em
+        font-size: 0.81em
 
 /* Карта */
 .map

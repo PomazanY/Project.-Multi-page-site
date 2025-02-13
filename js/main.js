@@ -52,12 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "All Nations - Manhattan Missions Church Bible Study",
             description: "Manhattan Bible Study Meetup Group",
-            date: new Date(2024, 2, 14, 11),
+            date: new Date(2024, 2, 14, 11), //год, месяц 2-март, день, часы
             image: "https://plus.unsplash.com/premium_photo-1679488248784-65a638a3d3fc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             type: "offline",
             category: "Health and Wellbeing",
             distance: 15,
         },
+
     ];
 
     function renderFunction(filteredEvents = eventsStore) {
@@ -69,48 +70,118 @@ document.addEventListener('DOMContentLoaded', () => {
             eventElement.classList.add('event-item');
 
             eventElement.innerHTML = `
-            
-            <div class="image-events">
-                <img src="${event.image}" alt="${event.title}" width='272px' height='153px'>
-            </div>
-            
-            <div class="event-content">
-                <div class="event-details">
-                    <h2>${event.date.toLocaleString()}</h2>
-                    <p class="title">${event.title}</p>
-                    <p class="category"> ${event.category}</p>
+                <div class="image-events">
+                    <img src="${event.image}" alt="${event.title}" width='272px' height='153px'>
                 </div>
                 
-            </div> 
-
-  `;
+                <div class="event-content">
+                    <div class="event-details">
+                        <h2>${new Date(event.date).toLocaleString()}</h2>
+                        <p class="title">${event.title}</p>
+                        <p class="category">${event.category}</p>
+                    </div>
+                </div> 
+            `;
             container.appendChild(eventElement);
         });
     }
 
     function filtersFunction() {
         const typeFilter = document.getElementById('eventType').value;
-        const categoryFilter = document.getElementById('eventDistance').value;
-        const distanceFilter = document.getElementById('eventCategory').value;
+        const categoryFilter = document.getElementById('eventCategory').value;
+        const distanceFilter = document.getElementById('eventDistance').value;
         const dateFilter = document.getElementById('eventDate').value;
 
         let filteredEvents = eventsStore.filter(event => {
+            const eventDate = new Date(event.date);
+            // const even = eventDate.toISOString().slice(0, 16);
+
+            // Фильтрация по категории
+            let categoryMatches = categoryFilter === 'all' || event.category === categoryFilter;
+
+            // Фильтрация по дате
+            let dateMatches = true;
+            if (dateFilter !== 'all') {
+                const selectedDate = new Date(dateFilter);
+                dateMatches =
+                    eventDate.getFullYear() === selectedDate.getFullYear() &&
+                    eventDate.getMonth() === selectedDate.getMonth() &&
+                    eventDate.getDate() === selectedDate.getDate() &&
+                    eventDate.getHours() === selectedDate.getHours() &&
+                    eventDate.getMinutes() === selectedDate.getMinutes();
+            }
+
+            // Фильтрация по дистанции (если событие не онлайн)
+            let distanceMatches = true;
+            if (!event.isOnline && distanceFilter !== 'all') {
+                distanceMatches = event.distance && event.distance == distanceFilter;
+            }
+
             return (typeFilter === 'all' || event.type === typeFilter) &&
-                (categoryFilter === 'all' || event.category === categoryFilter) &&
-                (distanceFilter === 'all' || (event.distance && event.distance == distanceFilter)) &&
-                (dateFilter === 'all' || event.date.toLocaleString() === dateFilter);
+                categoryMatches &&
+                dateMatches &&
+                distanceMatches;
         });
 
         renderFunction(filteredEvents);
     }
 
-    document.getElementById('eventType').addEventListener('input', filtersFunction);
-    document.getElementById('eventDistance').addEventListener('input', filtersFunction);
-    document.getElementById('eventCategory').addEventListener('input', filtersFunction);
-    document.getElementById('eventDate').addEventListener('input', filtersFunction);
+    // Online/Offline
 
+    function handleTypeChange() {
+        const distanceSelect = document.getElementById('eventDistance');
+        const selectedType = document.getElementById('eventType').value;
+
+        if (selectedType === "online") {
+            distanceSelect.disabled = true;  
+            distanceSelect.value = "all";   
+        } else {
+            distanceSelect.disabled = false; 
+        }
+
+        filtersFunction(); 
+    }
+
+    // Добавляем обработчики событий
+    document.getElementById('eventType').addEventListener('change', handleTypeChange);
+    document.getElementById('eventCategory').addEventListener('change', filtersFunction);
+    document.getElementById('eventDistance').addEventListener('change', filtersFunction);
+    document.getElementById('eventDate').addEventListener('change', filtersFunction);
+
+    // Отображаем все события при загрузке
     renderFunction();
+
+    //Open map
+    let mapWindow;
+    const mapButton = document.getElementById("open-map-btn");
+
+    if (mapButton) {
+        mapButton.addEventListener("click", function () {
+            if (!mapWindow || mapWindow.closed) {
+                mapWindow = window.open("https:www.google.com/maps?q=NewYork", "_blank", "width=800,height=600");
+            }
+        });
+    }
 });
 
 
+
+
+
+
+//Scroll map
+
+window.addEventListener('scroll', function() {
+    let map = document.querySelector('.events-map-container');
+    let stopPoint = 1100; // точка, где карта перестаёт быть фиксированной
+    
+    if (window.scrollY > stopPoint) {
+        map.style.position = 'absolute';
+        map.style.top = stopPoint + 'px';
+    } else {
+        map.style.position = 'fixed';
+        map.style.top = '162px'; // Начальное значение, чтобы карта оставалась на месте
+    }
+   
+  });
 
