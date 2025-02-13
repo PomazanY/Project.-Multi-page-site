@@ -1,0 +1,190 @@
+@use '../mixins'
+@use '../variables'
+
+.events
+    @include mixins.standart()
+
+    @media (min-width:768px) and (max-width: 1024px)
+        margin: 3.12em 3.12em
+        gap: 1.25em
+
+    @media (min-width:393px) and (max-width: 768px)
+        margin: 0em 1.25em 3.12em 1.25em
+        
+
+/* Заголовок блока с событиями */
+.events .events-header
+    @include mixins.navigation()
+    justify-content: space-between
+    width: 100%
+    flex-wrap: wrap
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 0.75em
+
+/* Блок с заголовком и местоположением */
+.events-header .event
+    @include mixins.navigation()
+    gap: 1.2em
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 0.94em
+
+
+.event h2
+    @include mixins.line-height($line-height:129%, $font-weight: 600, $font-size:1.75em)
+
+    color: variables.$color
+    @include mixins.wrap()
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 1.375em
+
+    @media (min-width:393px) and (max-width: 768px)
+        @include mixins.line-height($line-height:123%, $font-weight: 600, $font-size:1.25em)
+
+/* Местоположение с кнопкой редактирования */
+.event a
+    @include mixins.navigation()
+    justify-content: space-between
+    padding: 0.75em
+    border-radius: 0.5em
+    @include mixins.width-height($width:14.9em, $height: 2.75em)
+    @include mixins.line-height($line-height:1.2, $font-weight: 600, $font-size:1.25em)
+
+    background: variables.$bg-97cad11f
+    color: variables.$color-00798A
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 0.875em
+
+    @media (min-width:393px) and (max-width: 768px)
+        @include mixins.line-height($line-height:120%, $font-weight: 600, $font-size:0.8125)
+
+// a .location
+//     @media (min-width:393px) and (max-width: 768px)
+//         @include mixins.width-height($width:10.25em, $height: 1.87em)
+
+/* Кнопка "See all events" */
+.see-all-events
+    @include mixins.line-height($line-height:150%, $font-weight: 500, $font-size:1em)
+    color: variables.$color-00798A
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 0.875em
+
+    @media (min-width:393px) and (max-width: 768px)
+        display: none
+
+/* Контейнер для списка событий */
+.event-container
+    display: flex
+    flex-direction: column
+    gap: 2.2em
+    width: 100%
+
+    @media (min-width:768px) and (max-width: 1024px)
+        justify-content: center
+        gap: 1.5em
+
+/* Группы событий */
+.event-container-one,
+.event-container-two
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    gap: 2.2em
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 1.5em
+        width: 100%
+
+/* Карточка события */
+.event-card
+    display: flex
+    flex-direction: column
+    gap: 0.625em
+    max-width: 17em
+    @include mixins.wrap()
+    white-space: normal
+
+    @media (min-width:768px) and (max-width: 1024px)
+        flex: 1 1 calc(25% - 24px)
+
+/* Изображение карточки */
+.event-card img
+    width: 100%
+    height: auto
+    max-height: 9.5em
+    object-fit: cover
+    border-radius: 0.5em
+    transition: transform 0.3s ease
+
+.event-card img:hover
+    transform: scale(1.05)
+
+/* Заголовок события */
+.event-card a
+    @include mixins.line-height($line-height:120%, $font-weight: 600, $font-size:1.25em)
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 1em
+
+    @media (min-width:393px) and (max-width: 768px)
+        font-size: 0.94em
+
+/* Категория события */
+.event-card .event-category
+    @include mixins.line-height($line-height:143%, $font-weight: 500, $font-size:0.875em)
+    color: variables.$color-707070
+
+/* Дата события */
+.event-card .event-date
+    @include mixins.navigation()
+    @include mixins.line-height($line-height:143%, $font-weight: 400, $font-size:0.875em)
+    gap: 0.37em
+    letter-spacing: -0.02em
+    text-transform: uppercase
+    color: variables.$color
+
+/* Иконка календаря */
+.event-card .event-date img
+    @include mixins.width-height($width:1.25em, $height: 1.25em)
+
+/* Информация об участниках и цене */
+.event-card .event-info
+    @include mixins.navigation()
+    gap: 0.7em
+    @include mixins.line-height($line-height:150%, $font-weight: 400, $font-size:1em)
+    color: variables.$color
+
+/* Группы иконок в информации */
+.event-card .img-going,
+.event-card .img-ticket
+    @include mixins.navigation()
+    gap: 0.37em
+
+/* Размер иконок */
+.event-card .img-going img,
+.event-card .img-ticket img
+    @include mixins.width-height($width:1.25em, $height: 1.25em)
+
+    @media (min-width:768px) and (max-width: 1024px)
+        @include mixins.width-height($width:1em, $height: 1em)
+
+/* Обеспечивает перенос длинных слов */
+.event-card h3,
+.event-card p
+    @include mixins.wrap()
+    white-space: normal
+
+.location img
+    @media (min-width:768px) and (max-width: 1024px)
+        width: 0.81em
+
+.event-card .event-category,
+.event-card .event-date,
+.event-card .event-info
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 0.75em

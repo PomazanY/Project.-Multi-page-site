@@ -1,0 +1,90 @@
+@use '../mixins'
+@use '../variables'
+
+// Контейнер секции "Join Meetup"
+.join-meetup
+    @include mixins.navigation()
+    gap: 7.2em
+
+    background: variables.$bg-97cad11f
+    border-radius: 0.5em
+    margin: variables.$margin
+    padding: 2.2em 3.5em
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 1.5em
+        margin: 0em 3.12em 3.12em
+        padding: 1.5em 2em
+
+    @media (min-width:393px) and (max-width: 767px)
+        margin: 0em 0em 3.12em 0em
+        padding: 2.5em
+        gap: 0.63em
+        flex-direction: column
+
+// Контейнер текстового контента
+.join-meetup__content
+    display: flex
+    flex-direction: column
+    gap: 1em
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 1.33em
+    @media (min-width:393px) and (max-width: 768px)
+        gap: 2em
+
+// Заголовок секции
+.join-meetup__content h2
+    @include mixins.line-height($line-height:129%, $font-weight: 600, $font-size:1.75em)
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 1.375em
+
+// Текстовый блок (описание)
+.join-meetup__content p
+    @include mixins.line-height($line-height:150%, $font-weight: 400, $font-size:1em)
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 0.875em
+
+    @media (min-width:393px) and (max-width: 768px)
+        @include mixins.line-height($line-height:200%, $font-weight: 400, $font-size:0.75em)
+
+// Кнопка "Sign Up"
+.join-meetup__content a
+    @include mixins.navigationFlex()
+    flex-wrap: wrap
+
+    background: variables.$bg-F65858
+    border-radius: 0.5em
+    @include mixins.width-height($width:12em, $height: 2.5em)
+    box-shadow: variables.$box-shadow
+    @include mixins.line-height($line-height:150%, $font-weight: 500, $font-size:1em)
+
+    text-align: center
+    color: variables.$color-white
+    cursor: pointer
+    transition: transform 0.3s ease, background 0.3s ease
+
+    @media (min-width:768px) and (max-width: 1024px)
+        @include mixins.width-height($width:11.25em, $height: 2.4em)
+        font-size: 0.875em
+
+    @media (min-width:393px) and (max-width: 768px)
+        align-items: center
+
+.join-meetup__content p
+    @media (min-width:393px) and (max-width: 768px)
+        @include mixins.width-height($width:14.88em, $height: 8.5em)
+
+
+.join-meetup__image
+    @media (min-width:393px) and (max-width: 768px)
+        order: -1
+
+.join-meetup__content a:hover
+    background: variables.$bg-00798A
+    box-shadow: variables.$box-shadow
+    transform: translateY(-5px)

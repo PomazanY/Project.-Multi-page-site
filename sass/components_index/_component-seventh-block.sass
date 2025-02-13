@@ -1,0 +1,105 @@
+@use '../mixins'
+@use '../variables'
+
+.how-meetup-works
+    @include mixins.standart()
+
+    @media (min-width:768px) and (max-width: 1024px)
+        margin: 0em 3.12em 3.12em
+        gap: 1.25em
+
+    @media (min-width:393px) and (max-width: 768px)
+        margin: 0 1.25em 3.12em 1.25em
+
+.how-meetup h2
+    @include mixins.line-height($line-height:129%, $font-weight: 600, $font-size:1.75em)
+
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 1.375em
+
+    @media (min-width:393px) and (max-width: 768px)
+        font-size: 1.25em
+
+/* Контейнер, объединяющий все карточки Meetup */
+.meetup-container
+    @include mixins.navigation()
+    justify-content: space-between
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 1em
+
+    @media (min-width:393px) and (max-width: 767px)
+        flex-direction: column
+        gap: 0.75em
+
+.meetup-card
+    display: flex
+    background: variables.$bg-97cad11f
+    border-radius: 0.5em
+    padding: 2em 1.5em
+    gap: 1.5em
+
+    @media (min-width:768px) and (max-width: 1024px)
+        flex: 1 1 calc(50% - 24px)
+        padding: 1.5em 1.25em
+        gap: 1.25em
+
+    @media (min-width:393px) and (max-width: 768px)
+        flex: 1 1 100%
+        padding: 1.25em 1em
+        gap: 1em
+        border-radius: 0.4em
+
+.meetup-card img
+    @include mixins.width-height($width:2.56em, $height: 2.56em)
+
+    @media (min-width:768px) and (max-width: 1024px)
+        @include mixins.width-height($width:2.19em, $height: 2.19em)
+
+
+    @media (min-width:393px) and (max-width: 768px)
+        @include mixins.width-height($width:2em, $height: 2em)
+
+
+/* Контент внутри карточки Meetup */
+.meetup-content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 1em
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 0.75em
+
+    @media (min-width:393px) and (max-width: 768px)
+        gap: 0.62em
+
+/* Заголовок внутри карточки */
+.meetup-content h3
+    @include mixins.line-height($line-height:120%, $font-weight: 600, $font-size:1.25em)
+
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 1.125em
+
+    @media (min-width:393px) and (max-width: 768px)
+        font-size: 1em
+
+.meetup-content p
+    @include mixins.line-height($line-height:150%,$font-weight: 400, $font-size:1em)
+
+    color: variables.$color-707070
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 0.875em
+
+.meetup-content a
+    @include mixins.line-height($line-height:150%, $font-weight: 500, $font-size:1em)
+
+    color: variables.$color-00798A
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 0.875em

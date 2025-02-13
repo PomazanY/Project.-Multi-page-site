@@ -1,0 +1,114 @@
+@charset "UTF-8";
+.friendships-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin: 0 10em 7.8em;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .friendships-section {
+    margin: 0em 3.12em 3.12em;
+    gap: 1.25em;
+  }
+}
+@media (min-width: 393px) and (max-width: 768px) {
+  .friendships-section {
+    margin: 0 1.25em 3.12em 1.25em;
+    gap: 1.25em;
+  }
+}
+
+.events-map-container {
+  position: absolute;
+  top: 10.12em;
+  right: 8.3em;
+  border-radius: 0.75em;
+  padding: 1em;
+  z-index: 10;
+}
+
+.events-map-container h3 {
+  line-height: 133%;
+  font-weight: 500;
+  font-size: 0.75em;
+  color: #212121;
+}
+
+.events-map-container h2 {
+  line-height: 140%;
+  font-weight: 700;
+  font-size: 1.25em;
+  color: #212121;
+  margin-bottom: 0.9em;
+}
+
+.event-item {
+  display: flex;
+  gap: 0.94em;
+  margin: 0 47em 3em 10em;
+}
+
+.event-item h2 {
+  line-height: 120%;
+  font-weight: 600;
+  font-size: 1.25em;
+  color: #212121;
+}
+
+.event-details h2 {
+  line-height: 143%;
+  font-weight: 500;
+  font-size: 0.875em;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #7c6f50;
+}
+
+.event-details .title {
+  line-height: 150%;
+  font-weight: 500;
+  font-size: 1em;
+  color: #212121;
+}
+
+.event-details .category {
+  line-height: 143%;
+  font-weight: 500;
+  font-size: 0.875em;
+  color: #707070;
+}
+
+/* Карта */
+.map {
+  position: relative;
+  text-align: center;
+}
+
+/* Кнопка по центру */
+#open-map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  line-height: 143%;
+  font-weight: 500;
+  font-size: 0.875em;
+  text-align: center;
+  color: #00798A;
+  border: 0.13em solid #00798A;
+  border-radius: 0.5em;
+  background-color: white;
+  padding: 0.5em 1.5em;
+  transition: 0.3;
+}
+
+#open-map-btn:hover {
+  border: 2px solid #F65858;
+}
+
+/*# sourceMappingURL=meetup.css.map */

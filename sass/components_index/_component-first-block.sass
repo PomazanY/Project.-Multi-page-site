@@ -1,0 +1,86 @@
+@use '../mixins'
+@use '../variables'
+
+.main-container
+    @include mixins.navigationFlex()
+    gap: 3.4em
+    // height: 100vh
+    padding-top: 10em
+    margin: variables.$margin
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 1.25em
+        height: auto
+        margin: 3.1em 3.1em
+
+    @media (min-width:393px) and (max-width: 767px)
+        flex-direction: column
+        gap: 1.25em
+        margin: 2.5em 1.25em
+
+.main-content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 1.5em
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 1em
+
+    @media (min-width:393px) and (max-width: 768px)
+        gap: 1.25em
+
+.main-content h2
+    @include mixins.line-height($line-height:124%, $font-weight: 700, $font-size:2.625em)
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 2em
+
+    @media (min-width:393px) and (max-width: 768px)
+        font-weight: 700
+        font-size: 1.5625em
+        line-height: 122%
+
+.main-content p
+    @include mixins.line-height($line-height:150%, $font-weight: 400, $font-size:1em)
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 0.875em
+
+    @media (min-width:393px) and (max-width: 768px)
+        font-weight: 400
+        font-size: 0.75em
+        line-height: 200%
+
+.main-content a
+    @include mixins.navigationFlex()
+    @include mixins.width-height($width:7.8em, $height: 2.5em)
+    border-radius: 0.5em
+    @include mixins.line-height($line-height:150%, $font-weight: 400, $font-size:1em)
+    background: variables.$bg-00798A
+    color: variables.$color-white
+    box-shadow: variables.$box-shadow
+
+    cursor: pointer
+    transition: transform 0.3s ease, background 0.3s ease
+
+    @media (min-width:768px) and (max-width: 1024px)
+        @include mixins.width-height($width:7.5em, $height: 2.5em)
+        font-size: 0.875em
+
+    @media (min-width:393px) and (max-width: 768px)
+        display: none
+
+.main-content a:hover
+    background: variables.$bg-F65858
+    box-shadow: variables.$box-shadow
+    transform: translateY(-5px)
+
+.main-img img
+    @media (min-width:768px) and (max-width: 1024px)
+        @include mixins.width-height($width:18.7em, $height: auto)
+
+    @media (min-width:393px) and (max-width: 768px)
+        @include mixins.width-height($width:13.4em, $height: auto)

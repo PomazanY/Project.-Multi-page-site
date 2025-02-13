@@ -1,0 +1,49 @@
+
+@mixin navigation()
+    display: flex
+    align-items: center
+
+@mixin navigationFlex()
+    display: flex
+    align-items: center
+    justify-content: center
+
+@mixin standart()
+    display: flex
+    flex-direction: column
+    gap: 1.5em
+    margin: 0 10em 7.8em
+
+@mixin input()
+    padding: 13px 37px
+    border: none
+    outline: none
+    font-weight: 400
+    font-size: 1em
+
+@mixin  position()
+    position: relative
+
+@mixin border-radius($radius: 0.5em)
+    border-top-left-radius: $radius
+    border-bottom-left-radius: $radius
+
+@mixin flex-container()
+    @include navigation()
+    @include position()
+
+@mixin line-height($line-height:124%, $font-weight: 700, $font-size:2.625em)
+    line-height: $line-height
+    font-weight: $font-weight
+    font-size: $font-size
+
+@mixin width-height($width:7.8em, $height: 2.5em)
+    width: $width
+    height: $height
+
+@mixin wrap()
+    word-wrap: break-word
+    overflow-wrap: break-word
+
+
+    

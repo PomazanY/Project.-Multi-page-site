@@ -1,0 +1,122 @@
+@use '../mixins'
+@use '../variables'
+
+.friendships-section
+    @include mixins.standart()
+
+    @media (min-width:768px) and (max-width: 1024px)
+        margin: 0em 3.12em 3.12em
+        gap: 1.25em
+
+    @media (min-width:393px) and (max-width: 768px)
+        margin: 0 1.25em 3.12em 1.25em
+        gap: 1.25em
+
+.friendships-header
+    display: flex
+    flex-direction: column
+    gap: 1em
+
+    @media (min-width:768px) and (max-width: 1024px)
+        gap: 15px
+
+    @media (min-width:393px) and (max-width: 768px)
+        gap: 12px
+
+.friendships-header h2
+    @include mixins.line-height($line-height:129%, $font-weight: 600, $font-size:1.75em)
+
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 22px
+
+    @media (min-width:393px) and (max-width: 768px)
+        font-size: 20px
+
+.friendships-header p
+
+    @include mixins.line-height($line-height:150%,$font-weight: 400, $font-size:1em)
+
+    color: variables.$color-707070
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 14px
+
+/* Контейнер с карточками дружбы */
+.friendships-container
+    display: flex
+    gap: 2em
+    justify-content: space-between
+
+    @media (min-width:768px) and (max-width: 1024px)
+        flex-direction: column
+        gap: 24px
+
+    @media (min-width:393px) and (max-width: 768px)
+        flex-direction: column
+        gap: 20px
+
+/* Карточка дружбы */
+.friendship-card
+    flex: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: 1.5em
+    
+
+    @media (min-width:768px) and (max-width: 1024px)
+        flex-direction: row
+
+
+    @media (min-width:393px) and (max-width: 767px)
+        flex-direction: column
+        gap: 12px
+
+.friendship-card img
+    @include mixins.width-height($width:23.5em, $height: 11.94em)
+    border-radius: 0.5em
+
+    @media (min-width:393px) and (max-width: 768px)
+        width: 100%
+        height: auto
+        border-radius: 6px
+
+.friendship-card h3
+    @include mixins.line-height($line-height:156%,$font-weight: 600, $font-size:1.125em)
+
+    color: variables.$color
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 18px
+
+    @media (min-width:393px) and (max-width: 768px)
+        font-size: 16px
+
+.friendship-card p
+    @include mixins.line-height($line-height:150%,$font-weight: 400, $font-size:1em)
+
+    color: variables.$color-707070
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 14px
+
+.friendship-card a
+    @include mixins.line-height($line-height:150%, $font-weight: 500, $font-size:1em)
+
+    color: variables.$color-00798A
+
+    @media (min-width:768px) and (max-width: 1024px)
+        font-size: 14px
+
+.content-friendship
+    @media (min-width:768px) and (max-width: 1024px)
+        display: flex
+        flex-direction: column
+        gap: 8px
+
+    @media (min-width:393px) and (max-width: 768px)
+        display: flex
+        flex-direction: column
+        gap: 8px

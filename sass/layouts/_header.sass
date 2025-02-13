@@ -1,0 +1,121 @@
+@use '../mixins'
+@use '../variables'
+
+.navbar
+    @include mixins.navigation()
+    justify-content: space-between
+    padding: 0em 0.9em 0em 0.9em
+    background: variables.$bg-color-white
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1000
+    width: 100%
+
+    @media (max-width: 1024px)
+        flex-direction: column
+        align-items: flex-start 
+       
+
+/* Логотип */
+.logo
+    margin: 1.2em 1.5em
+
+/* Форма поиска */
+.search-form
+    @include mixins.navigation
+    gap: 2.5em
+    padding: 0.3em
+
+/* Контейнер поиска */
+.search-container
+    @include mixins.flex-container()
+    @include mixins.border-radius()
+    border: variables.$border
+
+    @media (max-width: 1024px)
+       
+
+.all-search-container
+    @include mixins.flex-container()
+    padding: 0.5em 0.9em
+
+/* Иконка поиска внутри поля */
+.search-icon
+    position: absolute
+    left: 0.8em
+
+/* Поле "Search events" */
+input[type="search"]
+    @include mixins.input()
+    border-radius: 0.5em 0 0 0.5em
+    flex: 1
+    /*Позволяет занять всю доступную ширину*/
+
+/* Поле "Location" */
+input[name="location"]
+    @include mixins.input()
+    border-left: variables.$border
+    /* Добавляем разделительную линию */
+
+/* Кнопка поиска */
+.button-search
+    @include mixins.navigation
+    background: variables.$bg-F65858
+    box-shadow: variables.$box-shadow
+    border: none
+    width: 3em
+    height: 3em
+    cursor: pointer
+    justify-content: center
+    border-radius: 0 0.5em 0.5em 0
+    transition: 0.5s
+
+/* Ховер-эффект */
+.button-search:hover
+    background: variables.$bg-00798A
+    box-shadow: variables.$box-shadow
+
+/* SVG внутри кнопки */
+.button-search svg
+    width: 1.12em
+    height: 1.1em
+    fill: variables.$bg-color-white
+
+/* Меню*/
+.menu
+    display: flex
+    gap: 1.4em
+    padding: 1.6em
+
+    @media (max-width: 1024px)
+    
+    
+
+.menu a
+    font-weight: 500
+    font-size: 0.875em
+    line-height: 143%
+    text-align: center
+    color: variables.$color
+
+.english-icon
+    display: flex
+    gap: 0.1em
+
+/*Стилизация ссылки внутри кнопки */
+.li-button a
+    color: variables.$bg-color-white
+    background-color: variables.$bg-00798A
+    box-shadow: variables.$box-shadow
+    font-weight: 500
+    font-size: 0.875em
+    line-height: 143%
+    padding: 0.5em 1em
+    border-radius: 0.5em
+    transition: 0.5s
+
+/* Ховер-эффект */
+.li-button a:hover
+    background: variables.$bg-F65858
+    box-shadow: variables.$box-shadow
