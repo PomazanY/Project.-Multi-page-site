@@ -167,21 +167,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// //Scroll map
 
-
-//Scroll map
-
-window.addEventListener('scroll', function() {
-    let map = document.querySelector('.events-map-container');
-    let stopPoint = 1100; // точка, где карта перестаёт быть фиксированной
+// window.addEventListener('scroll', function() {
+//     let map = document.querySelector('.events-map-container');
+//     let stopPoint = 1100; // точка, где карта перестаёт быть фиксированной
     
-    if (window.scrollY > stopPoint) {
-        map.style.position = 'absolute';
-        map.style.top = stopPoint + 'px';
-    } else {
-        map.style.position = 'fixed';
-        map.style.top = '162px'; // Начальное значение, чтобы карта оставалась на месте
-    }
+//     if (window.scrollY > stopPoint) {
+//         map.style.position = 'absolute';
+//         map.style.top = stopPoint + 'px';
+//     } else {
+//         map.style.position = 'fixed';
+//         map.style.top = '162px'; // Начальное значение, чтобы карта оставалась на месте
+//     }
    
-  });
+//   });
 
